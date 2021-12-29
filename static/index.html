@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Quieres ser mi novia?</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
+
+            html {
+                background-image: url(../img/background.png);
+                font-family: 'Nunito', 'sans-serif';
+            }
+
+            #btnYes {
+                background: black;
+                font-family: 'Nunito', 'sans-serif';
+                color: whitesmoke;
+                font-size: 40px;
+                border-radius: 40px;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            #btnNot {
+                background: black;
+                font-family: 'Nunito', 'sans-serif';
+                color: whitesmoke;
+                font-size: 40px;
+                border-radius: 40px;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            header { 
+                text-align: center;
+            }
+        </style>
+        <script>
+            var btnNot = document.getElementById('btnNot')
+            var btnYes = document.getElementById('btnYes')
+
+            let width = window.innerWidth
+            let height = window.innerHeight
+
+            let randomWidth = (Math.random()*width)
+            let randomHeight = (Math.random*height)
+
+            function move() {
+                let width = window.innerWidth
+                let height = window.innerHeight
+
+                let randomWidth = (Math.random()*width)
+                let randomHeight = (Math.random*height)
+
+                document.getElementById('btnNot').style.position = 'absolute'
+                document.getElementById('btnNot').style.right = randomWidth + 'px'
+                document.getElementById('btnNot').style.bottom = randomHeight + 'px'
+
+                if (document.getElementById('btnNot').style.right === document.getElementById('btnYes').style.right && document.getElementById('btnNot').style.bottom === document.getElementById('btnYes').style.bottom) {
+                    let randomWidth = (Math.random()*width)
+                    let randomHeight = (Math.random*height)
+
+                    document.getElementById('btnNot').style.right = randomWidth + 'px'
+                    document.getElementById('btnNot').style.bottom = randomHeight + 'px'
+                }
+            }
+
+            function thanks() {
+                alert("GRACIAS!!")
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>
+                Quieres ser mi novia?
+            </h1>
+        </header>
+        <main>
+            <button id="btnYes" onclick="thanks()">Si</button>
+            <button id="btnNot" onmouseover="move()" onclick="move()">No</button>
+        </main>
+    </body>
+</html>
